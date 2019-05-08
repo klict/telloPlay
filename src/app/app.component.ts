@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {TelloConnector} from './connector/telloConnector';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'telloPlay';
+
+  constructor(private telloConnector: TelloConnector) {
+    this.telloConnector.activateSdkMode().then(value => console.log('isActivated' + value));
+
+  }
+
 }
