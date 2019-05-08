@@ -1,3 +1,7 @@
-<h1>{{ height}}</h1>
 
-<h3>{{ tof }}</h3>
+<ngx-gauge [type]="heightGaugeSettings.type"
+           [value]="heightGaugeSettings.value"
+           [label]="heightGaugeSettings.label"
+           [append]="heightGaugeSettings.append"
+           [max]="heightGaugeSettings.max">
+</ngx-gauge>

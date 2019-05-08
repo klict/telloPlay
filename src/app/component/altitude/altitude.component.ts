@@ -9,8 +9,13 @@ import {TelloConnector} from '../../connector/telloConnector';
 })
 export class AltitudeComponent implements OnInit, Observer {
 
-  height = 0;
-
+  heightGaugeSettings = {
+    type: 'full',
+    value: 0,
+    max: 30,
+    label: 'height',
+    append: 'm'
+  };
 
   constructor(private telloConnector: TelloConnector) {
     telloConnector.attach(this);
@@ -22,7 +27,7 @@ export class AltitudeComponent implements OnInit, Observer {
   notify() {
     const telloDrone = this.telloConnector.telloDrone;
     // not sure if the barometer is used for altitude
-    this.height = telloDrone.height;
+    this.heightGaugeSettings.value = telloDrone.height;
 
   }
 
