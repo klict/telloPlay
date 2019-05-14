@@ -20,7 +20,6 @@ export class TelloConnector extends Subject {
     this.connectionToTello = this.websocketFactpry.createNewConnection('localhost', 7000);
 
     this.connectionToTello.addListener('state', (data: string) => {
-      console.log(data);
       this.telloDrone = this.telloDroneAdapter.adapt(JSON.parse(data));
       this.notifyAllAttachedObservers();
     });

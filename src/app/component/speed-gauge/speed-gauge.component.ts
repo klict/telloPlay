@@ -28,7 +28,6 @@ export class SpeedGaugeComponent implements OnInit, Observer {
   }
 
   notify() {
-
     const speed = this.telloConnector.telloDrone.speed;
 
     this.speedGaugeSettings.value = speed.x ? speed.x : speed.y ? speed.y : speed.z;

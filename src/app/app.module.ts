@@ -13,6 +13,7 @@ import {NgxGaugeModule} from 'ngx-gauge';
 import { AltitudeComponent } from './component/altitude/altitude.component';
 import { TelloControllerPage } from './pages/tello-controller/tello-controller.page';
 import { SpeedGaugeComponent } from './component/speed-gauge/speed-gauge.component';
+import { KeyboardControllerComponent } from './component/keyboard-controller/keyboard-controller.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SpeedGaugeComponent } from './component/speed-gauge/speed-gauge.compone
     BatteryStatusComponent,
     AltitudeComponent,
     TelloControllerPage,
-    SpeedGaugeComponent
+    SpeedGaugeComponent,
+    KeyboardControllerComponent
   ],
   imports: [
     BrowserModule,
