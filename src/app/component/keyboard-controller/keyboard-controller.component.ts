@@ -31,8 +31,10 @@ export class KeyboardControllerComponent implements OnInit {
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    const keyCode =  event.keyCode;
-
+    /**
+     * @todo keyCode is deprecated. It should be replaced
+     */
+    const keyCode = event.keyCode;
 
     switch (keyCode) {
       case KEY_CODE.UP_ARROW:
@@ -91,6 +93,7 @@ export class KeyboardControllerComponent implements OnInit {
   }
 
   takeoffORLand() {
+    // tof gives 10 back when it's on the ground
     this.telloConnector.telloDrone.timeOfFlight > 10 ?
       this.telloConnector.land() : this.telloConnector.takeOff();
   }
