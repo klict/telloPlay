@@ -11,10 +11,8 @@ export class SocketIoWebsocket implements WebsocketWebsocket {
 
   private serverSocket: Socket;
 
-
   constructor() {
   }
-
 
   connectTo(address: string, port: number): boolean {
     this.serverSocket = connect('http://' + address + ':' + port);
