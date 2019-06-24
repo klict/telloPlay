@@ -31,10 +31,9 @@ export class SocketIoWebsocket implements WebsocketWebsocket {
   sendMessage(msg: string, event: string = 'message'): Promise<string> {
 
     return new Promise<string>((resolve, reject) => {
-
-
       // send command
       this.serverSocket.emit(event, msg);
+
       // listen for response
       this.serverSocket.on('response', (message, info) => {
         this.serverSocket.removeListener('response');

@@ -117,7 +117,7 @@ export class TelloConnector extends Subject {
   private sendActionCommand(command: string): Promise<boolean> {
     return new Promise<boolean>((resolve, reject) => {
       this.connectionToTello.sendMessage(command, this.socketEvent)
-        .then(value => this.responseToBoolean(value))
+        .then(value => resolve(this.responseToBoolean(value)))
         .catch(reason => reject(reason));
     });
   }
